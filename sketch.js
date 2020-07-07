@@ -4,6 +4,9 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 var engine, world;
 var score = 0;
+function preload() {
+  getBackgroundImg();
+}
 function setup() {
   createCanvas(1600,800);
   engine=Engine.create(); 
@@ -40,7 +43,8 @@ function setup() {
   sling1 = new SlingShot(stone1.body,{x:250,y:150});
 }
 function draw() {
-  background(255,255,255); 
+  if(backgroundImg)
+  background(backgroundImg); 
   textSize(35)
   fill("black")
   text("Score  " + score, width-500, 50)
@@ -81,4 +85,8 @@ function mouseDragged(){
 }
 function mouseReleased(){
   sling1.fly();
+}
+async function getBackgroundImg(){
+  bg = "pure-white-background-85a2a7fd.jpg";
+backgroundImg = loadImage(bg);
 }
