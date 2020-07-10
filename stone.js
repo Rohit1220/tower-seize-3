@@ -9,7 +9,8 @@ class stone
 		this.x=x;
 		this.y=y;
         this.r=r
-        this.body=Matter.Bodies.polygon(this.x, this.y,50,this.r, [options])
+		this.body=Matter.Bodies.polygon(this.x, this.y,50,this.r, [options])
+		this.image = loadImage("220px-Basketball.png");
 		World.add(world, this.body);
 	}
 	display()

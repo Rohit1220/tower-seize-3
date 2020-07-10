@@ -41,6 +41,7 @@ function setup() {
   block25 = new block (1000,300);
   stone1 = new stone (250,50,50);
   sling1 = new SlingShot(stone1.body,{x:250,y:150});
+  //score = 0;
 }
 function draw() {
   if(backgroundImg)
@@ -78,6 +79,7 @@ function draw() {
   block25.display();
   stone1.display();
   sling1.display();
+  block1.score();
   drawSprites();
 }
 function mouseDragged(){
